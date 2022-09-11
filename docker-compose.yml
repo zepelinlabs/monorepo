@@ -1,14 +1,13 @@
-version: "3.7"
+version: '3.7'
 
 services:
   landing:
     build: ./landing
     command: npm run dev
-    env_file: "./landing/.env"
+    env_file: './landing/.env.local'
     ports:
       - 3000:3000
     volumes:
-      - ./landing/code/:/code
-      - /code/node_modules
-      - /code/.next
-
+      - ./landing/:/app
+      - /node_modules
+      - /.next
