@@ -18,7 +18,6 @@ export default function Newsletter() {
               <p className="text-xl text-nord-3 mt-4 mx-auto">
                 Subscríbete para estar al tanto de las últimas novedades.
               </p>
-
               <SubscribeForm />
             </div>
           </div>
