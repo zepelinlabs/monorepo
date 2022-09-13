@@ -18,6 +18,13 @@ export default function NavBar() {
             </a>
           </Link>
         </li>
+        <li className="py-5">
+          <Link href="/newsletter">
+            <a className="font-medium px-5 py-1 border-l border-nord-4 text-nord-14">
+              Newsletter
+            </a>
+          </Link>
+        </li>
         {/* <li className="py-5"><a href="#" className="font-medium px-5 py-1 border-l border-nord-4 text-nord-11">About</a></li>
         <li className="py-5"><a href="#" className="font-medium px-5 py-1 border-l border-nord-4 text-nord-14">Contact</a></li> */}
       </ul>
