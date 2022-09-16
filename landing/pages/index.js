@@ -1,10 +1,15 @@
 import { gql, GraphQLClient } from 'graphql-request';
 import NavBar from '../components/NavBar';
 import Link from 'next/link';
+import Head from 'next/head';
+import { getSortedPostsData } from '../lib/blogs';
 
-export default function Home({ header }) {
+export default function Home({ allBlogsData }) {
   return (
     <div>
+      <Head>
+        <title>Zepelín Labs</title>
+      </Head>
       <div className="h-screen bg-gradient-to-br from-nord-6 via-nord-5 to-nord-4">
         <NavBar />
         <header className="mt-16 sm:mt-20 px-4 sm:px-6 lg:px-8 xl:mt-32 mx-auto w-full max-w-container grid grid-cols-1">
@@ -36,6 +41,20 @@ export default function Home({ header }) {
             </Link>
           </div>
         </header>
+        <section>
+          <h2>Blog</h2>
+          <ul>
+            {allBlogsData.map(({ id, date, title }) => (
+              <li key={id}>
+                <Link href={`/blog/${id}`}>
+                  <a>
+                    <h3>{title}</h3>
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
@@ -51,6 +70,7 @@ const query = gql`
 `;
 
 export async function getStaticProps() {
+  // DatoCMS content
   const endpoint = 'https://graphql.datocms.com/';
 
   const graphQLClient = new GraphQLClient(endpoint, {
@@ -59,9 +79,15 @@ export async function getStaticProps() {
     },
   });
 
-  const data = await graphQLClient.request(query);
+  const datoCMSData = await graphQLClient.request(query);
+
+  // Blog content
+  const allBlogsData = getSortedPostsData();
 
   return {
-    props: data,
+    props: {
+      datoCMSData,
+      allBlogsData,
+    },
   };
 }
