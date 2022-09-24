@@ -43,11 +43,6 @@ export default function Home({ allBlogsData }) {
           </div>
         </header>
         <section className="mt-16 sm:mt-20 px-4 sm:px-6 lg:px-8 xl:mt-32 mx-auto w-full max-w-container grid grid-cols-1">
-          <h2 className="col-start-1 mt-4 max-w-[36rem] text-4xl">
-            <span className="font-bold tracking-tight sm:text-5xl">
-              Newsletter
-            </span>
-          </h2>
           <div className="col-start-1 row-start-3 max-w-2xl mx-auto bg-nord-1 mt-5 pb-5 rounded-lg text-nord-6">
             <div className="p-4">
               <h3 className="font-bold text-lg sm:text-lg text-nord-13">
