@@ -26,10 +26,10 @@ export default function Home({ allBlogsData }) {
         </header>
         <section className="px-4 sm:px-6 lg:px-8 mx-auto w-full max-w-container grid grid-cols-1">
           <p className="col-start-1 row-start-1 mt-4 max-w-lg text-lg text-nord-2">
-            Recibirás el siguiente email en tu bandeja de entrada, pero si no
-            puedes esperar,
+            Confirma tu suscripción haciendo click en el link del email que
+            acabas de recibir.
             <br />
-            puedes ver el último email aquí:
+            Mientras tanto, puedes ver el último email aquí:
           </p>
           <Link href={`/blog/${lastBlogData.id}`}>
             <a className="mt-4">

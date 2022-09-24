@@ -17,7 +17,7 @@ export default function SubscribeForm({ className }) {
               name="email"
               id="bd-email"
               placeholder="tu@email.com"
-              className="py-4 px-6 text-center focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg"
+              className="py-4 px-6 text-center text-nord-3 focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg"
             />
             <input
               type="submit"
