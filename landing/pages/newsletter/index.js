@@ -1,5 +1,5 @@
-import NavBar from '../components/NavBar';
-import SubscribeForm from '../components/SubscribeForm';
+import SubscribeForm from '../../components/SubscribeForm';
+import NavBar from '../../components/NavBar.js';
 
 export default function Newsletter() {
   return (
